@@ -19,7 +19,7 @@ SAMPLEOUT=sample
 INC_INSTALL_PREFIX=paulgrif
 INC_INSTALL_PATH=$(HOME)/include/$(INC_INSTALL_PREFIX)
 LIB_INSTALL_PATH=$(HOME)/lib/c
-INSTALLHEADERS=
+INSTALLHEADERS=pgtime.h
 
 # Compiler and archiver executable names
 AR=ar
@@ -37,7 +37,7 @@ C_RELEASE_FLAGS=-O3 -DNDEBUG
 LDFLAGS=
 
 # Object code files
-OBJS=mainlib.o
+OBJS=pgtime.o
 
 # Source and clean files and globs
 SRCS=$(wildcard *.c *.h)
@@ -143,6 +143,6 @@ main.o: main.c
 
 # Object files for library
 
-mainlib.o: mainlib.c mainlib.h
+pgtime.o: pgtime.c pgtime.h
 	@echo "Compiling $<..."
 	@$(CC) $(CFLAGS) -c -o $@ $<
