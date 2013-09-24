@@ -4,7 +4,12 @@ pgtime
 What is it?
 -----------
 
-**pgtime** is C project.
+**pgtime** is C library providing time functionality beyond that of the
+standard library. Functionality includes:
+* Incrementing and decrementing `struct tm`s by seconds, hours and days
+* Retrieving a UTC `time_t` value for a specifed UTC time
+* Checking for leap years
+* Comparing and quantifying the difference between two `struct tm`s
 
 Who maintains it?
 -----------------
@@ -22,7 +27,8 @@ Up-to-date documentation can be found at
 
 Installation
 ------------
-**pgtime** is written in C.
+**pgtime** is written in C. Run `make` to build the library and `make
+install` to install it.
 
 Licensing
 ---------
