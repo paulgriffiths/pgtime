@@ -12,7 +12,7 @@
 
 # Library and executable names
 LIBNAME=pgtime
-OUT=lib$(LIBNAME).a
+OUT=lib$(LIBNAME).so
 SAMPLEOUT=sample
 
 # Install paths and header files to deploy
@@ -29,7 +29,7 @@ CC=gcc
 ARFLAGS=rcs
 
 # Compiler flags
-CFLAGS=-std=c11 -pedantic -Wall -Wextra
+CFLAGS=-std=c11 -pedantic -Wall -Wextra -fPIC
 C_DEBUG_FLAGS=-ggdb -DDEBUG -DDEBUG_ALL
 C_RELEASE_FLAGS=-O3 -DNDEBUG
 
@@ -127,7 +127,7 @@ tags:
 # Main library
 main: $(OBJS)
 	@echo "Building library..."
-	@$(AR) $(ARFLAGS) $(OUT) $(OBJS)
+	@$(CC) -shared -o $(OUT) $(OBJS)
 	@echo "Done."
 
 
